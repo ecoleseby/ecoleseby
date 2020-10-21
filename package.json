@@ -1,0 +1,19 @@
+{
+  "name": "ecoleseby",
+  "version": "1.0.0",
+  "description": "Exercices et jeux éducatifs de l'école de Seby.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecoleseby/ecoleseby.git"
+  },
+  "author": "ShayanTavaril",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ecoleseby/ecoleseby/issues"
+  },
+  "homepage": "https://github.com/ecoleseby/ecoleseby#readme"
+}

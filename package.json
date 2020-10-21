@@ -1,19 +1,19 @@
 {
-  "name": "ecoleseby",
+  "name": "ecoleseby.github.io",
   "version": "1.0.0",
-  "description": "Exercices et jeux éducatifs de l'école de Seby.",
-  "main": "index.js",
+  "description": "Jeu éducatif pour l'apprentissage de la lecture",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ecoleseby/ecoleseby.git"
+    "url": "git+https://github.com/ecoleseby/ecoleseby.github.io.git"
   },
   "author": "ShayanTavaril",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ecoleseby/ecoleseby/issues"
+    "url": "https://github.com/ecoleseby/ecoleseby.github.io/issues"
   },
-  "homepage": "https://github.com/ecoleseby/ecoleseby#readme"
+  "homepage": "https://github.com/ecoleseby/ecoleseby.github.io#readme"
 }

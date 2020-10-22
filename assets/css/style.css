@@ -88,6 +88,10 @@ button:hover {
   height: calc(calc(100vh - 80px) - 3em);
 }
 
+#menuDiv>span, #instructions {
+  font-size: 1.5em;
+}
+
 #menuLvlOne {
   display: flex;
   justify-content: space-evenly;
@@ -141,6 +145,12 @@ button:hover {
   align-items: center;
   justify-content: center;
   height: calc(calc(100vh - 80px) - 3em);
+}
+
+#instructions {
+  position: absolute;
+  left: 15px;
+  top: 105px;
 }
 
 #wordToRead {

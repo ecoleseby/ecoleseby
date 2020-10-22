@@ -13,7 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
   wordToRead.addEventListener('click', readWord)
 })
 
-
+/**
+ * Initialisation de l'IHM de menu
+ */
 function initMenu() {
   groupList = new Set(window.jsonDatas.map(elem => elem.group))
 
@@ -68,6 +70,10 @@ function changeWindow(newGame) {
   }
 }
 
+/**
+ * Change l'affichage du groupe de niveau
+ * @param {String} newGroup : nom du groupe de niveau à afficher
+ */
 function changeGroup(newGroup) {
   let visible = document.querySelector('.groupVisible')
   if (visible != null) visible.classList.remove('groupVisible')
@@ -80,7 +86,7 @@ function changeGroup(newGroup) {
  * @param {Array} arr : contient la liste des mots 
  */
 function startGame(arr) {
-  wordList = arr
+  wordList = [...arr]
   wordList.push('!witch!')
   wordList.shuffle()
   while (wordList[0] === '!witch!')
@@ -88,6 +94,7 @@ function startGame(arr) {
   wordToRead.innerHTML = wordList[0]
   wordToRead.style.font = randomFont()
   wordToRead.setAttribute('name', wordList[0])
+  wordToRead.addEventListener('click', readWord)
   changeWindow(true)
 }
 
@@ -118,19 +125,26 @@ function readWord() {
  */
 function changeWord() {
   const actualIdx = wordList.findIndex((word) => word === wordToRead.getAttribute('name'))
-  const nextIdx = actualIdx === wordList.length - 1 ? 0 : actualIdx + 1
-  wordToRead.setAttribute('name', wordList[nextIdx])
-  wordToRead.style.font = randomFont()
+  // const nextIdx = actualIdx === wordList.length - 1 ? -1 : actualIdx + 1
 
-  if (wordList[nextIdx] === '!witch!') {
-    wordToRead.innerHTML = '<img alt="Sorcière !" src="./assets/img/witch.png">'
-    audioElement.play()
+  if (actualIdx < wordList.length - 1) {
+    const nextIdx = actualIdx + 1
+    wordToRead.setAttribute('name', wordList[nextIdx])
+    wordToRead.style.font = randomFont()
+
+    if (wordList[nextIdx] === '!witch!') {
+      wordToRead.innerHTML = '<img alt="Sorcière !" src="./assets/img/witch.png">'
+      audioElement.play()
+    }
+    else {
+      wordToRead.innerHTML = wordList[nextIdx]
+    }
+    wordToRead.addEventListener('click', readWord)
   }
   else {
-    wordToRead.innerHTML = wordList[nextIdx]
+    alert('Félicitation tu as finis la partie !')
+    changeWindow(false)
   }
-
-  wordToRead.addEventListener('click', readWord)
 }
 
 /**
